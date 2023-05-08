@@ -140,9 +140,11 @@
   display: flex;
   align-items: center;
   border-radius: 50px;
-  background: #020a4de9;
+  background: #0a125fe9;
 }
-
+::placeholder {
+  color: white;
+}
 .search__box input {
   background: transparent;
   border: none;

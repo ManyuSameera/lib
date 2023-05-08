@@ -16,6 +16,7 @@
 .form__group {
   width: 30%;
   margin-bottom: 0;
+  margin: auto;
 }
 
 .form__group input {
@@ -28,6 +29,8 @@
 .form__group input::placeholder {
   color: #7c8a97;
 }
+
+
 
 .form {
   background: #fff;

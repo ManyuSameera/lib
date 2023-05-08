@@ -35,8 +35,12 @@ const FindCarForm = ({bookData}) => {
             <option value="non-ac">Non-Fiction</option>
           </select>
         </FormGroup>
-        <FormGroup className="form__group">
-          <input type="date" placeholder="Journey date" required />
+        <FormGroup className="select__group">
+            <select placeholder="date" id="date"> 
+                <option value="">Select an date</option>{carData.map((carData)=>(
+                  <option key={carData.id} value={carData.publish_date}>{carData.publish_date}</option>
+                ))}
+            </select>
         </FormGroup>
 
         <FormGroup className="form__group">

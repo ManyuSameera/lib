@@ -4,72 +4,75 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
 import CarItem from "../components/UI/BookItem";
 import carData from "../assets/data/bookData";
+import { Link } from "react-router-dom";
+import FindCarForm from "../components/UI/FindBookForm";
+//import MyContext from '../components/UI/Mycontext';
 
-const ITEMS_PER_PAGE = 10;
 
+// const [searching,setSearching]=useState("");
 const CarListing = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const lastIndex = currentPage * ITEMS_PER_PAGE;
-  const firstIndex = lastIndex - ITEMS_PER_PAGE;
-  const currentItems = carData.slice(firstIndex, lastIndex);
-
+  const [data, setData] = useState(null);
+  const[searching,setSearching]=useState("");
   return (
     <Helmet title="Cars">
       <CommonSection title="Book Listing" />
 
       <section>
         <Container>
-          <Row>
-            <Col lg="12">
-              <div className="d-flex align-items-center gap-3 mb-5">
-                <span className="d-flex align-items-center gap-2">
-                  <i class="ri-sort-asc"></i> Sort By
+          <Row style={{display: "flex", justifyContent : "center", marginBottom: "40px"}}>
+            <Col md={3}>
+              <Container >
+            <div className="nav__right" >
+              <div className="search__box">
+                <input type="text" placeholder="Search" onChange={(e)=>setSearching(e.target.value)}/>
+                <span>
+                  <i class="ri-search-line"></i>
                 </span>
-
-                <select>
-                  <option>Select</option>
-                  <option value="low">Author</option>
-                  <option value="high">Fiction</option>
-                  <option value="high">Non-Fiction</option>
-                </select>
               </div>
+            </div>
+            </Container>
             </Col>
-
-            {currentItems.map((item) => (
-              <CarItem item={item} key={item.id} />
-            ))}
           </Row>
 
-          <Row className="justify-content-center">
-            <Col lg="4">
-              <nav>
-                <ul className="pagination page" style={{display:'flex',justifyContent:'center'}}>
-                  {carData.length > ITEMS_PER_PAGE &&
-                    Array(Math.ceil(carData.length / ITEMS_PER_PAGE))
-                      .fill()
-                      .map((_, i) => (
-                        <li
-                          key={i}
-                          className={`page-item ${
-                            i + 1 === currentPage ? "active" : ""
-                          }`}
-                        >
-                          <button
-                            className="page-link "
-                            onClick={() => handlePageChange(i + 1)}
-                          >
-                            {i + 1}
-                          </button>
-                        </li>
-                      ))}
-                </ul>
-              </nav>
+<Row>
+<Col>
+            <FindCarForm/>
             </Col>
+</Row>
+
+          <Row>
+              {  carData.filter((e)=>{
+                  return searching.toLowerCase() === '' ? e : e.author.toLowerCase().includes(searching) || e.bookName.toLowerCase().includes(searching);
+                }).map((e)=>{
+    return(
+      <Col lg="4" md="4" sm="6" className="mb-5">
+      <div className="car__item">
+        <div className="car__img">
+          <img src={e.imgUrl} alt="" className="w-100" />
+        </div>
+
+        <div className="car__item-content mt-4">
+          <h4 className="section__title text-center">{e.bookName}</h4>
+          <h6 className="rent__price text-center mt-">
+           {e.author}
+          </h6>
+
+          <button className=" w-50 car__item-btn car__btn-rent">
+            <Link to={`/cars/${e.bookName}`}>Rent</Link>
+          </button>
+
+          <button className=" w-50 car__item-btn car__btn-details">
+            <Link to={`/cars/${e.bookName}`}>Details</Link>
+          </button>
+        </div>
+      </div>
+    </Col>
+    )
+  })
+            }
+            {/* {carData.map((item) => (
+              <CarItem item={item} key={item.id} />
+            ))} */}
           </Row>
         </Container>
       </section>

@@ -22,8 +22,10 @@ const BecomeDriverSection = () => {
   const [user] = useAuthState(auth);
   console.log(auth);
   console.log(user?.displayName);
+
   const signOut1=async()=>
   {
+    setUserStatus(!userStatus);
    await signOut(auth)
    console.log("su")
   }
@@ -50,23 +52,32 @@ Navigate('/');}
               Join us!
             </h2>
 
-
+            {!user &&
+            
+            
+            
             <NavLink to=""  onClick={login}
                     
                     className={(navClass) =>
                       navClass.isActive ? "nav__active nav__item" : "nav__item"
                     }
                     
-                  >{userStatus ? "SignOut" : "login"}
-                    </NavLink>:
-                    <NavLink to=""  onClick={signOut1}
+                  >Login
+                    </NavLink> 
                     
-                    className={(navClass) =>
-                      navClass.isActive ? "nav__active nav__item" : "nav__item"
-                    }
+                    // : ""
+
+
+                  //   <NavLink to=""  onClick={signOut1}
                     
-                  >
-                    </NavLink>
+                  //   className={(navClass) =>
+                  //     navClass.isActive ? "nav__active nav__item" : "nav__item"
+                  //   }
+                    
+                  // >Sign out
+                  //   </NavLink>
+
+                  }
 
 
             {/* <button className="btn become__driver-btn mt-4">
