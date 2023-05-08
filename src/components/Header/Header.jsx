@@ -21,10 +21,6 @@ const navLinks = [
     display: "Books",
   },
   {
-    path: "/blogs",
-    display: "Blog",
-  },
-  {
     path: "/contact",
     display: "Contact",
   },
@@ -156,7 +152,6 @@ Navigate('/');}
                     to={item.path}
                     className={(navClass) =>
                       navClass.isActive ? "nav__active nav__item" : "nav__item"
-                    
                     }
                     key={index}
                   >
