@@ -27,7 +27,7 @@
 
 
 .image{
- height: 550px;
+ height: 500px;
 }
 
 .car__item-btn a:hover {
@@ -56,6 +56,11 @@
     font-size: 1.1rem;
     margin-bottom: 0;
   }
+  .image{
+    height: 550px;
+   }
+
+
 
   .car__item h6 {
     font-size: 1rem;
@@ -97,4 +102,8 @@
   .car__item-btn {
     font-size: 0.8rem;
   }
+
+  .image{
+    height: 350px;
+   }
 }

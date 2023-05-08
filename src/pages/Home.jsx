@@ -21,7 +21,10 @@ const Home = () => {
       <section className="p-0 hero__slider-section">
         <HeroSlider />
 
-        <div className="hero__form">
+        
+      </section>
+      <section>
+      <div className="hero__form">
           <Container>
             <Row className="form__row">
               <Col lg="4" md="4">
@@ -75,8 +78,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-4 text-center">
-              <h6 className="section__subtitle">Our clients says</h6>
-              <h2 className="section__title">Testimonials</h2>
+              <h6 className="section__subtitle">Explore</h6>
+              <h2 className="section__title">Newest Arrivals</h2>
             </Col>
 
             <Testimonial />

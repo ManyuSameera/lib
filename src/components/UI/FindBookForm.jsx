@@ -2,22 +2,24 @@ import React from "react";
 import "../../styles/find-book-form.css";
 import "../../styles/find-book-form.css";
 import { Form, FormGroup } from "reactstrap";
+import bookData from '../../assets/data/bookData'
+import carData from "../../assets/data/bookData";
 
-const FindCarForm = () => {
+const FindCarForm = ({bookData}) => {
   return (
     <Form className="form">
       <div className=" d-flex align-items-center justify-content-between flex-wrap">
-        <FormGroup className="form__group">
-          <input type="text" placeholder="Name of the book" required />
+        
+
+        <FormGroup className="select__group">
+        <select placeholder="AuthorName">
+            <option value="">Select an author</option>{carData.map((carData)=>(
+              <option key={carData.id} value={carData.id}>{carData.author}</option>
+            ))}
+          </select>
         </FormGroup>
 
-        <FormGroup className="form__group">
-          <input type="text" placeholder="Author" required />
-        </FormGroup>
-
-        <FormGroup className="form__group">
-          <input type="date" placeholder="Journey date" required />
-        </FormGroup>
+        
 
         {/* <FormGroup className="form__group">
           <input
@@ -32,6 +34,9 @@ const FindCarForm = () => {
             <option value="ac">Fiction</option>
             <option value="non-ac">Non-Fiction</option>
           </select>
+        </FormGroup>
+        <FormGroup className="form__group">
+          <input type="date" placeholder="Journey date" required />
         </FormGroup>
 
         <FormGroup className="form__group">

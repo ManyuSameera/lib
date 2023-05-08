@@ -1,10 +1,10 @@
 .become__driver {
   background: linear-gradient(rgb(0, 13, 107, 0.9), rgb(0, 13, 107, 0.9)),
-    url("../assets/all-images/drive.jpg");
+    url("https://images.unsplash.com/photo-1533669955142-6a73332af4db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1274&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 80px 0px;
+  padding: 40px 0px;
 }
 
 .become__driver button {
