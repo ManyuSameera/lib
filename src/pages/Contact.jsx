@@ -127,29 +127,43 @@ const Contact = () => {
   return (
     //  <StyledContactForm>
     <>
-    <Helmet title="Contact">
+    {/* <Helmet title="Contact"> */}
        <CommonSection title="Contact" />
-       <section>
-         <Container>
-           <Row>
-             <Col lg="7" md="7">
-               <h6 className="fw-bold mb-4">Get In Touch</h6>
+       {/* <section> */}
+         {/* <Container className="contact-wrapper"> */}
+           {/* <Row> */}
+             {/* <Col lg="7" md="7"> */}
+      <div className="form-wrapper">
+      <h2 className="fw-bold mb-4 contact-title">Get In Touch</h2>
       <Form>
-      <form ref={form} onSubmit={sendEmail}>
-        <FormGroup>
-        <label>Name</label>
-        <input type="text" name="user_name" /></FormGroup><FormGroup>
-        <label>Email</label>
-        <input type="email" name="user_email" /></FormGroup><FormGroup>
-        <label>Message</label>
-        <textarea name="message" /></FormGroup><FormGroup>
-        <button className=" contact__btn" type="submit" >Send</button></FormGroup>
-      </form></Form>
-      </Col>
-           </Row>
-        </Container>
-      </section>
-     </Helmet>
+        <form ref={form} onSubmit={sendEmail} className="contact-form">
+          <FormGroup className="contact-from-item">
+          <label>Name</label>
+          <input className="contact-input" type="text" name="user_name" />
+          </FormGroup>
+
+          <FormGroup className="contact-from-item">
+          <label>Email</label>
+          <input className="contact-input" type="email" name="user_email" />
+          </FormGroup>
+
+          <FormGroup className="contact-from-item">
+          <label className="textarea-label">Message</label>
+          <textarea name="message" className="contact-input" />
+          </FormGroup>
+
+          <FormGroup className="contact-from-item">
+          <button className=" contact__btn" type="submit" >Send</button>
+          </FormGroup>
+        </form>
+      </Form>
+
+      </div>
+      {/* </Col> */}
+           {/* </Row> */}
+        {/* </Container> */}
+      {/* </section> */}
+     {/* </Helmet> */}
       </>
     //  {/* </StyledContactForm> */}
   );

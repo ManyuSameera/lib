@@ -87,7 +87,7 @@ const carData = [
   },
   {
     id: 9,
-    bookName: "The Adventures of Huckleberry Finn",
+    bookName: "The Adventures of Finn",
     imgUrl:"https://m.media-amazon.com/images/I/61nwLbDFRLL.jpg",
     author:"Mark Twain",
     genre:"Non-Fiction",
@@ -152,7 +152,7 @@ const carData = [
 
   {
     id:15,
-    bookName: "One Hundred Years of Solitude",
+    bookName: "Hundred Years of Solitude",
     imgUrl:"https://m.media-amazon.com/images/I/81MI6+TpYkL.jpg",
     author:"Gabriel Garcia Marquez",
     genre:"Fiction",
@@ -183,7 +183,7 @@ const carData = [
   },
   {
     id:18,
-    bookName: "The Power of your subconscious mind",
+    bookName: "The Power of mind",
     imgUrl:"https://m.media-amazon.com/images/I/61t9lzF7NtL._AC_UL640_QL65_.jpg",
     author:"Joseph Murphy",
     genre:"Fiction",
@@ -213,7 +213,7 @@ const carData = [
   },
   {
     id:21,
-    bookName: "The Monk Who Sold His Ferrari",
+    bookName: "The Monk and His Ferrari",
     imgUrl:"https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UL480_QL65_.jpg",
     author:"Robin Sharma",
     genre:"Non-Fiction",
@@ -273,7 +273,7 @@ const carData = [
   },
   {
     id:27,
-    bookName: "The Complete Novels of Sherlock Holmes",
+    bookName: "Sherlock Holmes",
     imgUrl:"https://m.media-amazon.com/images/I/81NAo81PtRL._AC_UL480_QL65_.jpg",
     author:"Arthur Conan Doyle",
     genre:"Non-Fiction",
@@ -333,7 +333,7 @@ const carData = [
   },
   {
     id:33,
-    bookName: "Don't Believe Everything You Think",
+    bookName: "Don't Believe Everything",
     imgUrl:"https://m.media-amazon.com/images/I/71+6w5Xpj8L._AC_UL480_QL65_.jpg",
     author:"Joseph Nguyen",
     genre:"Non-Fiction",

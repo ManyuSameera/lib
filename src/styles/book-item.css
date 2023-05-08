@@ -23,11 +23,8 @@
   font-weight: 500;
 }
 
-
-
-
 .image{
- height: 500px;
+ height: 470px;
 }
 
 .car__item-btn a:hover {
@@ -57,7 +54,7 @@
     margin-bottom: 0;
   }
   .image{
-    height: 550px;
+    height: 250px;
    }
 
 
@@ -104,6 +101,6 @@
   }
 
   .image{
-    height: 350px;
+    height: 250px;
    }
 }
