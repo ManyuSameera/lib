@@ -17,7 +17,7 @@ const CarItem = (props) => {
         </div>
 
         <div className="car__item-content mt-4">
-          <h4 className="section__title text-center">{bookName}</h4>
+          <div className="section__title text-center"> <h4>{bookName}</h4></div>
           <h6 className="rent__price text-center mt-">
            {author}
           </h6>
