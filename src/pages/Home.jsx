@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import HeroSlider from "../components/UI/HeroSlider";
 import Helmet from "../components/Helmet/Helmet";
@@ -13,8 +13,21 @@ import BecomeDriverSection from "../components/UI/BecomeDriverSection";
 import Testimonial from "../components/UI/Testimonial";
 
 import BlogList from "../components/UI/BlogList";
+import { useState} from "react";
+
+import AOS from 'aos';
 
 const Home = () => {
+
+  useEffect(()=>{
+    AOS.init({
+      duration:2000,
+      easing:'ease-in-out'
+    })
+  },[]);
+  const [currentPage, setCurrentPage] = useState(1);
+const [itemsPerPage, setItemsPerPage] = useState(10);
+
   return (
     <Helmet title="Home">
       {/* ============= hero section =========== */}
@@ -23,7 +36,7 @@ const Home = () => {
 
         
       </section>
-      <section>
+      {/* <section>
       <div className="hero__form">
           <Container>
             <Row className="form__row">
@@ -39,9 +52,9 @@ const Home = () => {
             </Row>
           </Container>
         </div>
-      </section>
+      </section> */}
       {/* =========== about section ================ */}
-      <AboutSection />
+      {/* <AboutSection /> */}
       {/* ========== services section ============ */}
       {/* <section>
         <Container>
@@ -58,15 +71,64 @@ const Home = () => {
       {/* =========== car offer section ============= */}
       <section>
         <Container>
-          <Row>
-            <Col lg="12" className="text-center mb-5">
+          <Row className="text-center mb-5" data-aos="fade-down">
+            <Col lg="12">
               {/* <h6 className="section__subtitle">Come with</h6> */}
               <h2 className="section__title">Let's track down the book</h2>
             </Col>
 
-            {carData.slice(0, 6).map((item) => (
+            {carData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((item) => (
               <CarItem item={item} key={item.id} />
+            ))}<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '2rem'   }}  data-aos="fade-down">
+            <button
+              style={{ 
+                padding: '0.5rem 1rem', 
+                backgroundColor: '#fff', 
+                color: '#000', 
+                border: '1px solid #000', 
+                borderRadius: '0.25rem',
+                marginRight: '0.5rem',
+                cursor: 'pointer',
+              }}
+              onClick={() => setCurrentPage((prevPage) => prevPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Prev
+            </button>
+            {Array.from({ length: Math.ceil(carData.length / itemsPerPage) }, (_, i) => (
+              <button
+                key={i}
+                style={{ 
+                  padding: '0.5rem 1rem', 
+                  backgroundColor: currentPage === i + 1 ? '#000d6b' : '#fff', 
+                  color: currentPage === i + 1 ? '#fff' : '#000', 
+                  border: '1px solid #000', 
+                  borderRadius: '0.25rem',
+                  marginRight: '0.5rem',
+                  cursor: 'pointer',
+                }}
+                onClick={() => setCurrentPage(i + 1)}
+              >
+                {i + 1}
+              </button>
             ))}
+            <button
+              style={{ 
+                padding: '0.5rem 1rem', 
+                backgroundColor: '#fff', 
+                color: '#000', 
+                border: '1px solid #000', 
+                borderRadius: '0.25rem',
+                marginLeft: '0.5rem',
+                cursor: 'pointer',
+              }}
+              onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
+              disabled={currentPage === Math.ceil(carData.length / itemsPerPage)}
+            >
+              Next
+            </button>
+          </div>
+          
           </Row>
         </Container>
       </section>
@@ -76,7 +138,7 @@ const Home = () => {
       {/* =========== testimonial section =========== */}
       <section>
         <Container>
-          <Row>
+          <Row  data-aos="fade-down">
             <Col lg="12" className="mb-4 text-center">
               <h6 className="section__subtitle">Explore</h6>
               <h2 className="section__title">Newest Arrivals</h2>
@@ -89,7 +151,7 @@ const Home = () => {
 
       <section style={{backgroundColor: "lightgray"}}>
         <Container>
-          <Row>
+          <Row  data-aos="fade-down">
             <Col lg="12" className="mb-4 text-center">
               <h6 className="section__subtitle">Explore</h6>
               <h2 className="section__title">Top Fictional Books</h2>
