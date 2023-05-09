@@ -13,7 +13,7 @@ const carData = [
   {
     id: 2,
     bookName: "Company of One",
-    imgUrl:"https://images.unsplash.com/photo-1641154748135-8032a61a3f80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9vayUyMGNvdmVyfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    imgUrl:"https://m.media-amazon.com/images/I/71CqOvbF+2L._AC_UY327_FMwebp_QL65_.jpg",
     author:"Paul Jarvis",
     description:
       "What if the real key to a more fulfilling career was not to scale up but to work for yourself and become a successful and sustainable company of one? The New York Times bestselling author of Deep Work Cal Newport calls this book a “must-read for any entrepreneur who prioritizes a rich life over riches.” Company of One offers a refreshingly original business strategy that’s focused on a commitment to being better instead of bigger. Why? Because staying small provides one with the freedom to pursue more meaningful pleasures in life―and avoid the headaches that come with traditional growth-oriented business. Having personally discovered the benefits of cutting out the corporate hierarchy that constantly demands more, author Paul Jarvis explains how you can do the same. With this groundbreaking guide, you’ll learn how to set up your shop, determine your desired revenues, deal with unexpected crises, keep your key clients happy, and find self-fulfillment every step of the way.",
