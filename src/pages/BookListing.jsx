@@ -358,7 +358,7 @@ const CarListing = () => {
                   if(one){
                    
                       return(
-                        <Col lg="4" md="4" sm="6" className="mb-5" data-aos="fade-down" >
+                        <Col lg="4" md="4" sm="6" className="mb-5"  >
                         <div className="car__item">
                           <div className="car__img">
                             <img src={e.imgUrl} alt="" className="w-100" />

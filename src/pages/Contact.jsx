@@ -135,7 +135,7 @@ const Contact = () => {
              {/* <Col lg="7" md="7"> */}
       <div className="form-wrapper">
       <h2 className="fw-bold mb-4 contact-title">Get In Touch</h2>
-      <Form>
+      {/* <Form> */}
         <form ref={form} onSubmit={sendEmail} className="contact-form">
           <FormGroup className="contact-from-item">
           <label>Name</label>
@@ -156,7 +156,7 @@ const Contact = () => {
           <button className=" contact__btn" type="submit" >Send</button>
           </FormGroup>
         </form>
-      </Form>
+      {/* </Form> */}
 
       </div>
       {/* </Col> */}
